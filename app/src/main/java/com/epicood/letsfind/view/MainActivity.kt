@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.fragment)
         val appBarConfiguration : AppBarConfiguration = AppBarConfiguration(setOf(
             R.id.baseFragment,
+            R.id.resultFragment,
 //            R.id.ratingFragment,
 //            R.id.profilFragment,
         ))
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.quizFragment -> bottomBar.visibility = View.GONE
                 R.id.ratingFragment -> bottomBar.visibility = View.GONE
                 R.id.profilFragment -> bottomBar.visibility = View.GONE
+                R.id.resultFragment -> bottomBar.visibility = View.GONE
                 else -> bottomBar.visibility = View.VISIBLE
             }
         }

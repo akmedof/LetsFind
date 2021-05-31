@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="quiz"
             type="com.epicood.letsfind.model.Quiz" />
@@ -15,130 +16,139 @@
         tools:context=".view.QuizFragment">
 
         <RelativeLayout
+            android:id="@+id/centerRelativ"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/centerRelativ"
             android:layout_centerInParent="true">
         </RelativeLayout>
 
 
-
         <androidx.cardview.widget.CardView
+            android:id="@+id/qusestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/background"
-            android:id="@+id/qusestion"
-            app:cardCornerRadius="10dp"
-            android:layout_marginBottom="50dp"
+            android:layout_above="@+id/centerRelativ"
             android:layout_marginHorizontal="25dp"
-            android:layout_above="@+id/centerRelativ">
+            android:layout_marginBottom="50dp"
+            android:backgroundTint="@color/background"
+            app:cardCornerRadius="10dp">
+
             <TextView
+                android:id="@+id/qusestionText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textAlignment="center"
+                android:layout_marginHorizontal="2dp"
                 android:padding="10dp"
                 android:text="The Curiosity rover built by National Aeronautics and Space
 Administration (NASA) as a part of Astrobiology mission
 successfully landed on the planet–"
-                android:textSize="20dp"
+                android:textAlignment="center"
                 android:textColor="#fff"
-                android:layout_marginHorizontal="2dp"
-                android:id="@+id/qusestionText"/>
+                android:textSize="20dp" />
         </androidx.cardview.widget.CardView>
 
 
-
-
-
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:backgroundTint="@color/background"
             android:id="@+id/variantA"
-            app:cardCornerRadius="10dp"
-            android:layout_marginVertical="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_below="@+id/centerRelativ"
             android:layout_marginHorizontal="25dp"
-            android:layout_below="@+id/centerRelativ">
+            android:layout_marginVertical="12dp"
+            android:clickable="true"
+            app:cardCornerRadius="10dp">
+
             <TextView
+                android:id="@+id/variantAText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textSize="20dp"
+                android:background="@color/background"
                 android:padding="5dp"
-                android:textColor="@color/white"
                 android:text="Mercury"
-                android:layout_marginHorizontal="2dp"
-                android:id="@+id/VariantAText"/>
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:backgroundTint="@color/background"
             android:id="@+id/variantB"
-            app:cardCornerRadius="10dp"
-            android:layout_marginVertical="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_below="@+id/variantA"
             android:layout_marginHorizontal="25dp"
-            android:layout_below="@+id/variantA">
+            android:layout_marginVertical="12dp"
+            android:backgroundTint="@color/background"
+            android:clickable="true"
+            app:cardCornerRadius="10dp">
+
             <TextView
+                android:id="@+id/variantBText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                android:textColor="@color/white"
+                android:padding="5dp"
                 android:text="Saturn"
-                android:padding="5dp"
-                android:layout_marginHorizontal="2dp"
-                android:id="@+id/VariantBText"/>
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:backgroundTint="@color/background"
             android:id="@+id/variantC"
-            app:cardCornerRadius="10dp"
-            android:layout_marginVertical="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_below="@+id/variantB"
             android:layout_marginHorizontal="25dp"
-            android:layout_below="@+id/variantB">
+            android:layout_marginVertical="12dp"
+            android:backgroundTint="@color/background"
+            android:clickable="true"
+            app:cardCornerRadius="10dp">
+
             <TextView
+                android:id="@+id/variantCText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
+                android:padding="5dp"
+                android:text="Mars"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:padding="5dp"
-                android:textSize="20dp"
-                android:text="Mars"
-                android:layout_marginHorizontal="2dp"
-                android:id="@+id/VariantCText"/>
+                android:textSize="20dp" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/variantD"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:backgroundTint="@color/background"
-            android:id="@+id/variantD"
-            app:cardCornerRadius="10dp"
-            android:layout_marginVertical="12dp"
+            android:layout_below="@+id/variantC"
             android:layout_marginHorizontal="25dp"
-            android:layout_below="@+id/variantC">
+            android:layout_marginVertical="12dp"
+            android:backgroundTint="@color/background"
+            android:clickable="true"
+            app:cardCornerRadius="10dp">
+
             <TextView
+                android:id="@+id/variantDText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                android:textColor="@color/white"
                 android:padding="5dp"
                 android:text="Venus "
-                android:layout_marginHorizontal="2dp"
-                android:id="@+id/VariantDText"/>
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
         </androidx.cardview.widget.CardView>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/variantD"
+            android:layout_marginTop="15dp"
+            android:text="Sonraki"
+            android:layout_centerInParent="true"
+            android:id="@+id/btnNext"/>
 
 
     </RelativeLayout>
