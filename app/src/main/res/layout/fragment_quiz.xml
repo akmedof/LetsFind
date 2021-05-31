@@ -1,130 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".QuizFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="quiz"
+            type="com.epicood.letsfind.model.Quiz" />
+    </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/centerRelativ"
-        android:layout_centerInParent="true">
-    </RelativeLayout>
+        android:layout_height="match_parent"
+        tools:context=".view.QuizFragment">
 
-
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/background"
-        android:id="@+id/qusestion"
-        app:cardCornerRadius="10dp"
-        android:layout_marginBottom="50dp"
-        android:layout_marginHorizontal="25dp"
-        android:layout_above="@+id/centerRelativ">
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="10dp"
-            android:text="The Curiosity rover built by National Aeronautics and Space
+            android:id="@+id/centerRelativ"
+            android:layout_centerInParent="true">
+        </RelativeLayout>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/background"
+            android:id="@+id/qusestion"
+            app:cardCornerRadius="10dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_above="@+id/centerRelativ">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:text="The Curiosity rover built by National Aeronautics and Space
 Administration (NASA) as a part of Astrobiology mission
 successfully landed on the planet–"
-            android:textSize="20dp"
-            android:textColor="#fff"
-            android:layout_marginHorizontal="2dp"
-            android:id="@+id/qusestionText"/>
-    </androidx.cardview.widget.CardView>
+                android:textSize="20dp"
+                android:textColor="#fff"
+                android:layout_marginHorizontal="2dp"
+                android:id="@+id/qusestionText"/>
+        </androidx.cardview.widget.CardView>
 
 
 
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:backgroundTint="@color/background"
-        android:id="@+id/variantA"
-        app:cardCornerRadius="10dp"
-        android:layout_marginVertical="12dp"
-        android:layout_marginHorizontal="25dp"
-        android:layout_below="@+id/centerRelativ">
-        <TextView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="20dp"
-            android:padding="5dp"
-            android:textColor="@color/white"
-            android:text="Mercury"
-            android:layout_marginHorizontal="2dp"
-            android:id="@+id/VariantAText"/>
-    </androidx.cardview.widget.CardView>
+            android:layout_height="45dp"
+            android:backgroundTint="@color/background"
+            android:id="@+id/variantA"
+            app:cardCornerRadius="10dp"
+            android:layout_marginVertical="12dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_below="@+id/centerRelativ">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:text="Mercury"
+                android:layout_marginHorizontal="2dp"
+                android:id="@+id/VariantAText"/>
+        </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:backgroundTint="@color/background"
-        android:id="@+id/variantB"
-        app:cardCornerRadius="10dp"
-        android:layout_marginVertical="12dp"
-        android:layout_marginHorizontal="25dp"
-        android:layout_below="@+id/variantA">
-        <TextView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="20dp"
-            android:textColor="@color/white"
-            android:text="Saturn"
-            android:padding="5dp"
-            android:layout_marginHorizontal="2dp"
-            android:id="@+id/VariantBText"/>
-    </androidx.cardview.widget.CardView>
+            android:layout_height="45dp"
+            android:backgroundTint="@color/background"
+            android:id="@+id/variantB"
+            app:cardCornerRadius="10dp"
+            android:layout_marginVertical="12dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_below="@+id/variantA">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:text="Saturn"
+                android:padding="5dp"
+                android:layout_marginHorizontal="2dp"
+                android:id="@+id/VariantBText"/>
+        </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:backgroundTint="@color/background"
-        android:id="@+id/variantC"
-        app:cardCornerRadius="10dp"
-        android:layout_marginVertical="12dp"
-        android:layout_marginHorizontal="25dp"
-        android:layout_below="@+id/variantB">
-        <TextView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="@color/white"
-            android:padding="5dp"
-            android:textSize="20dp"
-            android:text="Mars"
-            android:layout_marginHorizontal="2dp"
-            android:id="@+id/VariantCText"/>
-    </androidx.cardview.widget.CardView>
+            android:layout_height="45dp"
+            android:backgroundTint="@color/background"
+            android:id="@+id/variantC"
+            app:cardCornerRadius="10dp"
+            android:layout_marginVertical="12dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_below="@+id/variantB">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:padding="5dp"
+                android:textSize="20dp"
+                android:text="Mars"
+                android:layout_marginHorizontal="2dp"
+                android:id="@+id/VariantCText"/>
+        </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:backgroundTint="@color/background"
-        android:id="@+id/variantD"
-        app:cardCornerRadius="10dp"
-        android:layout_marginVertical="12dp"
-        android:layout_marginHorizontal="25dp"
-        android:layout_below="@+id/variantC">
-        <TextView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="20dp"
-            android:textColor="@color/white"
-            android:padding="5dp"
-            android:text="Venus "
-            android:layout_marginHorizontal="2dp"
-            android:id="@+id/VariantDText"/>
-    </androidx.cardview.widget.CardView>
+            android:layout_height="45dp"
+            android:backgroundTint="@color/background"
+            android:id="@+id/variantD"
+            app:cardCornerRadius="10dp"
+            android:layout_marginVertical="12dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_below="@+id/variantC">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:padding="5dp"
+                android:text="Venus "
+                android:layout_marginHorizontal="2dp"
+                android:id="@+id/VariantDText"/>
+        </androidx.cardview.widget.CardView>
 
-</RelativeLayout>
 
+
+    </RelativeLayout>
+</layout>
