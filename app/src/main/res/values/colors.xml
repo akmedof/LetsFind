@@ -12,4 +12,15 @@
     <color name="background">#3F51B5</color>
     <color name="cardViewBack">#dddddd</color>
     <color name="textColor">#293160</color>
+
+    //ToolBar
+    <color name="toolBarBackground">#EA004A</color>
+
+    //Bottom Bar Dark
+    <color name="bottomBarBackground">#EA004A</color>
+    <color name="bottomBarSelectIcon">#E9FFFFFF</color>
+    <color name="bottomBarIcon">#E9FFFFFF</color>
+
 </resources>
+
+
