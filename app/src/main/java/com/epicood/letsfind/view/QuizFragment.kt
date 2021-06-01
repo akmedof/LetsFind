@@ -50,12 +50,18 @@ class QuizFragment : Fragment() {
             }
         })
 
-//        variantSelect("Mars")
 
     }
 
     private fun setQuizs(quizs: List<Quiz>){
-
+        qusestionText.text = quizs[count].quest
+        variantAText.text = quizs[count].answerA
+        variantBText.text = quizs[count].answerB
+        variantCText.text = quizs[count].answerC
+        variantDText.text = quizs[count].answerD
+        variantSelect(quizs[count].answer)
+//        Log.i("asdf", quizs[count].toString())
+        count++
         btnNext.setOnClickListener {
 
             if (count < quizs.size){
@@ -65,7 +71,7 @@ class QuizFragment : Fragment() {
                 variantCText.text = quizs[count].answerC
                 variantDText.text = quizs[count].answerD
                 variantSelect(quizs[count].answer)
-                Log.i("asdf", quizs[count].toString())
+//                Log.i("asdf", quizs[count].toString())
                 count++
             }else{
                 val action = QuizFragmentDirections.actionQuizFragmentToResultFragment()
@@ -150,77 +156,3 @@ class QuizFragment : Fragment() {
         }
     }
 }
-
-
-
-/*
-        var i=0
-        variantA.setOnClickListener {
-            if(i!=1) {
-                i = 1
-                if (variantAText.text.equals("Mars")) {
-                    variantAText.setBackgroundColor(Color.parseColor("#83DC0A"))
-                }else if(variantBText.text.equals("Mars")){
-                    variantAText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantBText.setBackgroundColor(Color.parseColor("#83DC0A"))
-                }else if(variantCText.text.equals("Mars")){
-                    variantAText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantCText.setBackgroundColor(Color.parseColor("#83DC0A"))
-                }else if(variantDText.text.equals("Mars")){
-                    variantAText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantDText.setBackgroundColor(Color.parseColor("#83DC0A"))
-                }
-            }
-        }
-        variantB.setOnClickListener {
-            if(i!=1) {
-                i = 1
-                if (variantBText.text.equals("Mars")) {
-                    variantBText.setBackgroundColor(Color.parseColor("#83DC0A"))
-                }else if(variantAText.text.equals("Mars")){
-                    variantBText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantAText.setBackgroundColor(Color.parseColor("#83DC0A"))
-                }else if(variantCText.text.equals("Mars")){
-                    variantBText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantCText.setBackgroundColor(Color.parseColor("#83DC0A"))
-                }else if(variantDText.text.equals("Mars")){
-                    variantBText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantDText.setBackgroundColor(Color.parseColor("#83DC0A"))
-                }
-            }
-        }
-        variantC.setOnClickListener {
-            if(i!=1) {
-                i = 1
-                if (variantCText.text.equals("Mars")) {
-                    variantCText.setBackgroundColor(Color.parseColor("#83DC0A"))
-                }else if(variantAText.text.equals("Mars")){
-                    variantBText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantAText.setBackgroundColor(Color.parseColor("#83DC0A"))
-                }else if(variantCText.text.equals("Mars")){
-                    variantBText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantCText.setBackgroundColor(Color.parseColor("#83DC0A"))
-                }else if(variantDText.text.equals("Mars")){
-                    variantBText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantDText.setBackgroundColor(Color.parseColor("#83DC0A"))
-                }
-            }
-        }
-        variantD.setOnClickListener {
-            if(i!=1) {
-                i = 1
-                if (variantDText.text.equals("Mars")) {
-                    variantDText.setBackgroundColor(Color.parseColor("#83DC0A"))
-                }else if(variantAText.text.equals("Mars")){
-                    variantDText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantAText.setBackgroundColor(Color.parseColor("#83DC0A"))
-                }else if(variantCText.text.equals("Mars")){
-                    variantDText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantCText.setBackgroundColor(Color.parseColor("#83DC0A"))
-                }else if(variantBText.text.equals("Mars")){
-                    variantDText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantBText.setBackgroundColor(Color.parseColor("#83DC0A"))
-                }
-            }
-        }
-*/
