@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "897793856482",
+    "project_id": "lets-find-fdbd5",
+    "storage_bucket": "lets-find-fdbd5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897793856482:android:88e1291df84b5cf9cadfbb",
+        "android_client_info": {
+          "package_name": "com.epicood.letsfind"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "897793856482-sdalln1qhb5qfs8eq7559m8c8qbnapf8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5g1qisXoUMd6dUAYPPb7_EfrdD6m0jQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "897793856482-sdalln1qhb5qfs8eq7559m8c8qbnapf8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

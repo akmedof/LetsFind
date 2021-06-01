@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.epicood.letsfind.R
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_result.*
 
 
@@ -27,6 +28,9 @@ class ResultFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        var database = FirebaseDatabase.getInstance().reference
+
 
         resultToMain.setOnClickListener {
             Navigation.findNavController(it).navigate(ResultFragmentDirections.actionResultFragmentToBaseFragment())
