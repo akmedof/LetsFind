@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/baseFragment"
-        android:name="com.epicood.letsfind.view.BaseFragment"
+        android:name="com.epicood.letsfind.view.fragment.BaseFragment"
         android:label="Lets Find Quiz"
         tools:layout="@layout/fragment_base" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
-        android:name="com.epicood.letsfind.view.QuizFragment"
+        android:name="com.epicood.letsfind.view.fragment.QuizFragment"
         android:label="Quiz"
         tools:layout="@layout/fragment_quiz" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
-        android:name="com.epicood.letsfind.view.ResultFragment"
+        android:name="com.epicood.letsfind.view.fragment.ResultFragment"
         android:label="Cavab"
         tools:layout="@layout/fragment_result" >
         <action
@@ -34,12 +34,12 @@
     </fragment>
     <fragment
         android:id="@+id/ratingFragment"
-        android:name="com.epicood.letsfind.view.RatingFragment"
+        android:name="com.epicood.letsfind.view.fragment.RatingFragment"
         android:label="Reytinq"
         tools:layout="@layout/fragment_rating" />
     <fragment
         android:id="@+id/profilFragment"
-        android:name="com.epicood.letsfind.view.ProfilFragment"
+        android:name="com.epicood.letsfind.view.fragment.ProfilFragment"
         android:label="Profil"
         tools:layout="@layout/fragment_profil" />
 </navigation>
