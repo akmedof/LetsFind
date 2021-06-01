@@ -1,20 +1,20 @@
-package com.epicood.letsfind.view
+package com.epicood.letsfind.view.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
 import com.epicood.letsfind.R
-import kotlinx.android.synthetic.main.fragment_result.*
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.FirebaseDatabase.getInstance
 
+class RatingFragment : Fragment() {
 
-class ResultFragment : Fragment() {
+//    private lateinit var database : FirebaseDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -22,15 +22,16 @@ class ResultFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_result, container, false)
+        return inflater.inflate(R.layout.fragment_rating, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        resultToMain.setOnClickListener {
-            Navigation.findNavController(it).navigate(ResultFragmentDirections.actionResultFragmentToBaseFragment())
-        }
+//        var database = FirebaseDatabase.getInstance().reference
+
+
+
 
     }
 

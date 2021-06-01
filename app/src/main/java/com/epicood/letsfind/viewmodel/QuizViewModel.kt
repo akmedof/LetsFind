@@ -15,7 +15,7 @@ class QuizViewModel: ViewModel() {
         val q4 = Quiz("Aşağıdakılardan hansı Çingiz xanın ölümündən sonra qurulan dövlətlərdən biri deyil?", "Qızıl Ordu", "Çağatay", "Kubilay", "Ağqoyunlu", "Kubilay")
         val q5 = Quiz("Hansı yaşlar fiziki aktivliyin ən yüksək həddə çatdığı dövrdür? ", "11-15", "13-19", "24-32", "32-dən yuxarı", "24-32")
 
-        val list = arrayListOf<Quiz>(q1, q2, q3, q4, q5)
+        val list = arrayListOf(q1, q2, q3, q4, q5)
         quizs.value = list
     }
 

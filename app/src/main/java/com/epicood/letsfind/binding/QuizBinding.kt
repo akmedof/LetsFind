@@ -5,7 +5,6 @@ import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingAdapter
 import androidx.navigation.findNavController
-import com.epicood.letsfind.view.BaseFragmentDirections
 
 class QuizBinding {
 

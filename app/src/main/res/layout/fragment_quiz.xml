@@ -13,7 +13,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.QuizFragment">
+        tools:context=".view.fragment.QuizFragment">
 
         <RelativeLayout
             android:id="@+id/centerRelativ"
@@ -26,12 +26,12 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/qusestion"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:layout_above="@+id/centerRelativ"
             android:layout_marginHorizontal="25dp"
             android:layout_marginBottom="50dp"
             android:backgroundTint="@color/background"
-            app:cardCornerRadius="10dp">
+            app:cardCornerRadius="5dp">
 
             <TextView
                 android:id="@+id/qusestionText"
@@ -45,7 +45,8 @@ Administration (NASA) as a part of Astrobiology mission
 successfully landed on the planet–"
                 android:textAlignment="center"
                 android:textColor="#fff"
-                android:textSize="20dp" />
+                android:textStyle="bold"
+                android:textSize="22.5dp" />
         </androidx.cardview.widget.CardView>
 
 
@@ -57,7 +58,7 @@ successfully landed on the planet–"
             android:layout_marginHorizontal="25dp"
             android:layout_marginVertical="12dp"
             android:clickable="true"
-            app:cardCornerRadius="10dp">
+            app:cardCornerRadius="5dp">
 
             <TextView
                 android:id="@+id/variantAText"
@@ -67,6 +68,7 @@ successfully landed on the planet–"
                 android:background="@color/background"
                 android:padding="5dp"
                 android:text="Mercury"
+                android:textStyle="bold"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="20dp" />
@@ -81,7 +83,7 @@ successfully landed on the planet–"
             android:layout_marginVertical="12dp"
             android:backgroundTint="@color/background"
             android:clickable="true"
-            app:cardCornerRadius="10dp">
+            app:cardCornerRadius="5dp">
 
             <TextView
                 android:id="@+id/variantBText"
@@ -92,6 +94,7 @@ successfully landed on the planet–"
                 android:text="Saturn"
                 android:textAlignment="center"
                 android:textColor="@color/white"
+                android:textStyle="bold"
                 android:textSize="20dp" />
         </androidx.cardview.widget.CardView>
 
@@ -104,7 +107,7 @@ successfully landed on the planet–"
             android:layout_marginVertical="12dp"
             android:backgroundTint="@color/background"
             android:clickable="true"
-            app:cardCornerRadius="10dp">
+            app:cardCornerRadius="5dp">
 
             <TextView
                 android:id="@+id/variantCText"
@@ -115,6 +118,7 @@ successfully landed on the planet–"
                 android:text="Mars"
                 android:textAlignment="center"
                 android:textColor="@color/white"
+                android:textStyle="bold"
                 android:textSize="20dp" />
         </androidx.cardview.widget.CardView>
 
@@ -127,7 +131,7 @@ successfully landed on the planet–"
             android:layout_marginVertical="12dp"
             android:backgroundTint="@color/background"
             android:clickable="true"
-            app:cardCornerRadius="10dp">
+            app:cardCornerRadius="5dp">
 
             <TextView
                 android:id="@+id/variantDText"
@@ -138,6 +142,7 @@ successfully landed on the planet–"
                 android:text="Venus "
                 android:textAlignment="center"
                 android:textColor="@color/white"
+                android:textStyle="bold"
                 android:textSize="20dp" />
         </androidx.cardview.widget.CardView>
 
@@ -149,6 +154,38 @@ successfully landed on the planet–"
             android:text="Sonraki"
             android:layout_centerInParent="true"
             android:id="@+id/btnNext"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:layout_above="@+id/qusestion"
+            android:orientation="horizontal">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_above="@+id/qusestion"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="9dp"
+                android:layout_width="0dp"
+                android:layout_weight="10"
+                android:layout_marginHorizontal="10dp"
+                android:scaleY="2.5"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textCount"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@+id/qusestion"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="30" />
+
+        </LinearLayout>
 
 
     </RelativeLayout>
