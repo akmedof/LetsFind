@@ -13,6 +13,13 @@
         tools:context=".view.fragment.BaseFragment"
         android:background="@color/background">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/quiz_icon"
+            android:layout_above="@+id/relativeLayout"
+            android:layout_centerHorizontal="true"/>
+
 
         <RelativeLayout
             android:id="@+id/relativeLayout"
@@ -45,7 +52,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:textColor="@color/textColor"
+                        android:textColor="@color/btnTextColor"
+                        android:background="@color/btnBackground"
                         android:gravity="center"
                         android:text="Ümumi Bilik"
                         android:textSize="20sp"
@@ -67,7 +75,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="Məntiq"
-                        android:textColor="@color/textColor"
+                        android:textColor="@color/btnTextColor"
+                        android:background="@color/btnBackground"
                         android:textStyle="bold"
                         android:gravity="center"
                         android:textSize="20sp" />
@@ -94,7 +103,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:textColor="@color/textColor"
+                        android:textColor="@color/btnTextColor"
+                        android:background="@color/btnBackground"
                         android:text="Tarix"
                         android:textStyle="bold"
                         android:gravity="center"
@@ -115,7 +125,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="Futbool"
-                        android:textColor="@color/textColor"
+                        android:textColor="@color/btnTextColor"
+                        android:background="@color/btnBackground"
                         android:textStyle="bold"
                         android:gravity="center"
                         android:textSize="20sp" />
@@ -142,7 +153,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:textColor="@color/textColor"
+                        android:textColor="@color/btnTextColor"
+                        android:background="@color/btnBackground"
                         android:text="Riyaziyyat"
                         android:textStyle="bold"
                         android:gravity="center"
@@ -162,7 +174,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:textColor="@color/textColor"
+                        android:textColor="@color/btnTextColor"
+                        android:background="@color/btnBackground"
                         android:text="IQ Test"
                         android:textStyle="bold"
                         android:gravity="center"

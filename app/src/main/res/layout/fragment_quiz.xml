@@ -13,6 +13,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/background"
         tools:context=".view.fragment.QuizFragment">
 
         <RelativeLayout
@@ -27,26 +28,35 @@
             android:id="@+id/qusestion"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:background="@color/btnBackground"
             android:layout_above="@+id/centerRelativ"
             android:layout_marginHorizontal="25dp"
             android:layout_marginBottom="50dp"
             android:backgroundTint="@color/background"
-            app:cardCornerRadius="5dp">
+            app:cardCornerRadius="10dp">
 
-            <TextView
-                android:id="@+id/qusestionText"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="2dp"
-                android:padding="10dp"
-                android:text="The Curiosity rover built by National Aeronautics and Space
+                android:layout_height="match_parent"
+                android:background="@color/btnBackground">
+
+                <TextView
+                    android:id="@+id/qusestionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="2dp"
+                    android:background="@color/btnBackground"
+                    android:padding="10dp"
+                    android:text="The Curiosity rover built by National Aeronautics and Space
 Administration (NASA) as a part of Astrobiology mission
 successfully landed on the planet–"
-                android:textAlignment="center"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                android:textSize="22.5dp" />
+                    android:textAlignment="center"
+                    android:textColor="@color/btnTextColor"
+                    android:textStyle="bold"
+                    android:textSize="22.5dp" />
+
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
 
@@ -65,12 +75,12 @@ successfully landed on the planet–"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:background="@color/background"
+                android:background="@color/btnBackground"
                 android:padding="5dp"
                 android:text="Mercury"
                 android:textStyle="bold"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/btnTextColor"
                 android:textSize="20dp" />
         </androidx.cardview.widget.CardView>
 
@@ -93,7 +103,8 @@ successfully landed on the planet–"
                 android:padding="5dp"
                 android:text="Saturn"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/btnTextColor"
+                android:background="@color/btnBackground"
                 android:textStyle="bold"
                 android:textSize="20dp" />
         </androidx.cardview.widget.CardView>
@@ -117,7 +128,8 @@ successfully landed on the planet–"
                 android:padding="5dp"
                 android:text="Mars"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/btnTextColor"
+                android:background="@color/btnBackground"
                 android:textStyle="bold"
                 android:textSize="20dp" />
         </androidx.cardview.widget.CardView>
@@ -141,7 +153,8 @@ successfully landed on the planet–"
                 android:padding="5dp"
                 android:text="Venus "
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/btnTextColor"
+                android:background="@color/btnBackground"
                 android:textStyle="bold"
                 android:textSize="20dp" />
         </androidx.cardview.widget.CardView>
@@ -181,6 +194,7 @@ successfully landed on the planet–"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_above="@+id/qusestion"
+                android:textColor="@color/btnTextColor"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:text="30" />

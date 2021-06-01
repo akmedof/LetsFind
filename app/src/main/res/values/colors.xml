@@ -9,9 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
 
-    <color name="background">#3F51B5</color>
     <color name="cardViewBack">#dddddd</color>
-    <color name="textColor">#293160</color>
 
     //ToolBar
     <color name="toolBarBackground">#EA004A</color>
@@ -20,6 +18,20 @@
     <color name="bottomBarBackground">#EA004A</color>
     <color name="bottomBarSelectIcon">#E9FFFFFF</color>
     <color name="bottomBarIcon">#E9FFFFFF</color>
+
+    //Background
+    <color name="background">#131833</color>
+
+    //Text Color
+    <color name="textColor">#E9FFFFFF</color>
+
+    //Button Color
+    <color name="btnBackground">#00B0FF</color>
+    <color name="btnTextColor">#E9FFFFFF</color>
+
+
+
+
 
 </resources>
 
