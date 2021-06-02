@@ -2,9 +2,12 @@ package com.epicood.letsfind.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.epicood.letsfind.getRandom
 import com.epicood.letsfind.model.Quiz
+import java.util.*
 
 class QuizViewModel: ViewModel() {
+
 
     val quizs = MutableLiveData<List<Quiz>>()
 
@@ -47,7 +50,12 @@ class QuizViewModel: ViewModel() {
         val qf20 = Quiz("1986 Dünya Kuboku finalının nəticəsi nə oldu? \nArgentina - Almaniya", "2-1", "4-3", "3-2", "1-0", "3-2")
 
         val list = arrayListOf(qf1, qf2, qf3, qf4, qf5, qf6, qf7, qf8, qf9, qf10, qf11, qf12, qf13, qf14, qf15, qf16, qf17, qf18, qf19, qf20)
-        quizs.value = list
+        val iqList = arrayListOf<Quiz>()
+        val l = getRandom(9)
+        l.forEach {
+            iqList.add(list[it])
+        }
+        quizs.value = iqList
     }
 
     fun getIQQuiz(){
@@ -73,8 +81,17 @@ class QuizViewModel: ViewModel() {
         val qIq20 = Quiz(" Qarajdakı bütün BMW-lər sedan tiplidir. \n Qarajdakı BMW-lər və başqa bir brendi daşıyan avtomobillər xaric, bütün maşınlar offrouder tiplidir. \n Qarajdakı Fordlar offrouder, Nissanlar heçbek tiplidir. \n Qarajdakı ən bahalı maşın Mersedes brendini daşıyan maşındır. \n Mersedes hansı tipə malikdir? ", " Sedan ", " Offrouder ", " Heçbek ", " Heç birinə ", " Offrouder ")
 
         val list = arrayListOf(qIq1, qIq2, qIq3, qIq4, qIq5, qIq6, qIq7, qIq8, qIq9, qIq10, qIq11, qIq12, qIq13, qIq14, qIq15, qIq16, qIq17, qIq18, qIq19, qIq20)
-        quizs.value = list
+
+        val iqList = arrayListOf<Quiz>()
+        val l = getRandom(9)
+        l.forEach {
+            iqList.add(list[it])
+        }
+        quizs.value = iqList
     }
+
+
+
 
 
 }

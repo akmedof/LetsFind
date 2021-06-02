@@ -3,24 +3,19 @@ package com.epicood.letsfind.view.fragment
 import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.widget.addTextChangedListener
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import com.epicood.letsfind.Constants.Companion.FUTBOOL
-import com.epicood.letsfind.Constants.Companion.IQ
+import com.epicood.letsfind.util.Constants.Companion.FUTBOOL
+import com.epicood.letsfind.util.Constants.Companion.IQ
 import com.epicood.letsfind.R
-import com.epicood.letsfind.databinding.FragmentQuizBinding
 import com.epicood.letsfind.model.Quiz
-import com.epicood.letsfind.model.QuizResult
 import com.epicood.letsfind.viewmodel.QuizViewModel
 import kotlinx.android.synthetic.main.fragment_quiz.*
 
@@ -32,6 +27,7 @@ class QuizFragment : Fragment() {
     private var straightAnswer = 0
     private var incorrectAnswer = 0
     private var quizCategoryID = 0
+    private var qCount = 0
     private lateinit var list: List<Quiz>
 //    private lateinit var binding: FragmentQuizBinding
     private lateinit var countBar: CountDownTimer
@@ -96,6 +92,7 @@ class QuizFragment : Fragment() {
 
     private fun setQuizs(quizs: List<Quiz>){
         countBar.start()
+        quizCount.text = (qCount++).toString()
         btnNext.visibility = View.GONE
         qusestionText.text = quizs[count].quest
         variantAText.text = quizs[count].answerA
@@ -106,6 +103,7 @@ class QuizFragment : Fragment() {
         count++
         btnNext.setOnClickListener {
             countBar.start()
+            quizCount.text = (qCount++).toString()
             if (count < quizs.size) {
                 btnNext.visibility = View.GONE
                 qusestionText.text = quizs[count].quest
@@ -126,10 +124,10 @@ class QuizFragment : Fragment() {
     }
 
     private fun variantSelect(answer: String){
-        variantAText.setBackgroundColor(Color.parseColor("#3F51B5"))
-        variantBText.setBackgroundColor(Color.parseColor("#3F51B5"))
-        variantCText.setBackgroundColor(Color.parseColor("#3F51B5"))
-        variantDText.setBackgroundColor(Color.parseColor("#3F51B5"))
+        variantAText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.answer_btn))
+        variantBText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.answer_btn))
+        variantCText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.answer_btn))
+        variantDText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.answer_btn))
         var i=0
         variantA.setOnClickListener {
             countBar.cancel()
@@ -137,19 +135,19 @@ class QuizFragment : Fragment() {
             if(i!=1) {
                 i = 1
                 if (variantAText.text.equals(answer)) {
-                    variantAText.setBackgroundColor(Color.parseColor("#83DC0A"))
+                    variantAText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickSuccess))
                     straightAnswer++
                 }else if(variantBText.text.equals(answer)){
-                    variantAText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantBText.setBackgroundColor(Color.parseColor("#83DC0A"))
+                    variantAText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickError))
+                    variantBText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickSuccess))
                     incorrectAnswer++
                 }else if(variantCText.text.equals(answer)){
-                    variantAText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantCText.setBackgroundColor(Color.parseColor("#83DC0A"))
+                    variantAText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickError))
+                    variantCText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickSuccess))
                     incorrectAnswer++
                 }else if(variantDText.text.equals(answer)){
-                    variantAText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantDText.setBackgroundColor(Color.parseColor("#83DC0A"))
+                    variantAText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickError))
+                    variantDText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickSuccess))
                     incorrectAnswer++
                 }
             }
@@ -160,19 +158,19 @@ class QuizFragment : Fragment() {
             if(i!=1) {
                 i = 1
                 if (variantBText.text.equals(answer)) {
-                    variantBText.setBackgroundColor(Color.parseColor("#83DC0A"))
+                    variantBText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickSuccess))
                     straightAnswer++
                 }else if(variantAText.text.equals(answer)){
-                    variantBText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantAText.setBackgroundColor(Color.parseColor("#83DC0A"))
+                    variantBText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickError))
+                    variantAText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickSuccess))
                     incorrectAnswer++
                 }else if(variantCText.text.equals(answer)){
-                    variantBText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantCText.setBackgroundColor(Color.parseColor("#83DC0A"))
+                    variantBText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickError))
+                    variantCText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickSuccess))
                     incorrectAnswer++
                 }else if(variantDText.text.equals(answer)){
-                    variantBText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantDText.setBackgroundColor(Color.parseColor("#83DC0A"))
+                    variantBText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickError))
+                    variantDText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickSuccess))
                     incorrectAnswer++
                 }
             }
@@ -183,19 +181,19 @@ class QuizFragment : Fragment() {
             if(i!=1) {
                 i = 1
                 if (variantCText.text.equals(answer)) {
-                    variantCText.setBackgroundColor(Color.parseColor("#83DC0A"))
+                    variantCText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickSuccess))
                     straightAnswer++
                 }else if(variantAText.text.equals(answer)){
-                    variantCText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantAText.setBackgroundColor(Color.parseColor("#83DC0A"))
+                    variantCText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickError))
+                    variantAText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickSuccess))
                     incorrectAnswer++
                 }else if(variantBText.text.equals(answer)){
-                    variantCText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantBText.setBackgroundColor(Color.parseColor("#83DC0A"))
+                    variantCText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickError))
+                    variantBText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickSuccess))
                     incorrectAnswer++
                 }else if(variantDText.text.equals(answer)){
-                    variantCText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantDText.setBackgroundColor(Color.parseColor("#83DC0A"))
+                    variantCText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickError))
+                    variantDText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickSuccess))
                     incorrectAnswer++
                 }
             }
@@ -206,19 +204,19 @@ class QuizFragment : Fragment() {
             if(i!=1) {
                 i = 1
                 if (variantDText.text.equals(answer)) {
-                    variantDText.setBackgroundColor(Color.parseColor("#83DC0A"))
+                    variantDText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickSuccess))
                     straightAnswer++
                 }else if(variantAText.text.equals(answer)){
-                    variantDText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantAText.setBackgroundColor(Color.parseColor("#83DC0A"))
+                    variantDText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickError))
+                    variantAText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickSuccess))
                     incorrectAnswer++
                 }else if(variantCText.text.equals(answer)){
-                    variantDText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantCText.setBackgroundColor(Color.parseColor("#83DC0A"))
+                    variantDText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickError))
+                    variantCText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickSuccess))
                     incorrectAnswer++
                 }else if(variantBText.text.equals(answer)){
-                    variantDText.setBackgroundColor(Color.parseColor("#DC0A27"))
-                    variantBText.setBackgroundColor(Color.parseColor("#83DC0A"))
+                    variantDText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickError))
+                    variantBText.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.btnClickSuccess))
                     incorrectAnswer++
                 }
             }

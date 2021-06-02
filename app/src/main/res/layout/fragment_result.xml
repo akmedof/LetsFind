@@ -85,7 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="3dp"
             android:layout_weight="1"
-            android:text="20"
+            android:text="10"
             android:textAlignment="textStart"
             android:textColor="#fff"
             android:textSize="40dp"

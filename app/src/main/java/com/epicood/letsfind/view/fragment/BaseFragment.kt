@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
-import com.epicood.letsfind.Constants.Companion.FUTBOOL
-import com.epicood.letsfind.Constants.Companion.IQ
+import com.epicood.letsfind.util.Constants.Companion.FUTBOOL
+import com.epicood.letsfind.util.Constants.Companion.IQ
 import com.epicood.letsfind.R
 import kotlinx.android.synthetic.main.fragment_base.*
 

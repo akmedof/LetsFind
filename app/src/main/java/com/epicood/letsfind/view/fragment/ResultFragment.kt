@@ -41,6 +41,7 @@ class ResultFragment : Fragment() {
             mainScore.text = straight.toString()
 //            score.text = incorrect.toString()
             getCountPoint(straight, incorrect)
+            setCupImg(straight)
         }
 //        mainScore.text =
 //        score.text = result.incorrect.toString()
@@ -56,8 +57,16 @@ class ResultFragment : Fragment() {
         var point = sPoint - iPoint
         if (point < 0){
             quizPoint.text = "0"
+        }else{
+            quizPoint.text = point.toString()
         }
-        quizPoint.text = point.toString()
+    }
+    private fun setCupImg(straight: Int){
+        if(straight >= 8){
+            cupImage.setImageResource(R.drawable.gold_cup)
+        }else if(straight < 8 && straight >= 5){
+            cupImage.setImageResource(R.drawable.sliver_cup)
+        }else cupImage.setImageResource(R.drawable.bronz_cup)
     }
 
 }
