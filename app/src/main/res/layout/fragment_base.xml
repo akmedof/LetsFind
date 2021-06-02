@@ -113,6 +113,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/quizFutbool"
                     app:cardElevation="7.5dp"
                     app:cardCornerRadius="7.5dp"
                     android:layout_width="0dp"
@@ -163,6 +164,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/iqQuiz"
                     app:cardElevation="7.5dp"
                     app:cardCornerRadius="7.5dp"
                     android:layout_width="0dp"

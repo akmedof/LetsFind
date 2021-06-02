@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import com.epicood.letsfind.Constants.Companion.FUTBOOL
+import com.epicood.letsfind.Constants.Companion.IQ
 import com.epicood.letsfind.R
 import kotlinx.android.synthetic.main.fragment_base.*
 
@@ -28,7 +30,18 @@ class BaseFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         generalKnowledge.setOnClickListener {
-            Navigation.findNavController(view).navigate(BaseFragmentDirections.actionBaseFragmentToQuizFragment())
+            val action = BaseFragmentDirections.actionBaseFragmentToQuizFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
+        quizFutbool.setOnClickListener {
+            val action = BaseFragmentDirections.actionBaseFragmentToQuizFragment()
+            action.categoriesID = FUTBOOL
+            Navigation.findNavController(it).navigate(action)
+        }
+        iqQuiz.setOnClickListener {
+            val action = BaseFragmentDirections.actionBaseFragmentToQuizFragment()
+            action.categoriesID = IQ
+            Navigation.findNavController(it).navigate(action)
         }
 
     }

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_baseFragment_to_quizFragment"
             app:destination="@id/quizFragment" />
+<!--        <argument-->
+<!--            android:name="ratingID"-->
+<!--            app:argType="com.epicood.letsfind.model.Quiz" />-->
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
@@ -22,6 +25,10 @@
         <action
             android:id="@+id/action_quizFragment_to_resultFragment"
             app:destination="@id/resultFragment" />
+        <argument
+            android:name="categoriesID"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
@@ -31,6 +38,17 @@
         <action
             android:id="@+id/action_resultFragment_to_baseFragment"
             app:destination="@id/baseFragment" />
+        <argument
+            android:name="straightCount"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="incorrectCount"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <!--        <argument-->
+<!--            android:name="result"-->
+<!--            app:argType="com.epicood.letsfind.model.QuizResult" />-->
     </fragment>
     <fragment
         android:id="@+id/ratingFragment"

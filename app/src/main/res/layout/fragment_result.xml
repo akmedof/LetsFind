@@ -5,18 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#131833"
-    tools:context=".view.ResultFragment">
-    =======
     tools:context=".view.fragment.ResultFragment">
-    >>>>>>> origin/main
-
 
     <RelativeLayout
         android:id="@+id/centerRelativ"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"></RelativeLayout>
-
 
     <ImageView
         android:id="@+id/cupImage"
