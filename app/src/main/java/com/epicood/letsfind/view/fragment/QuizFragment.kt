@@ -68,10 +68,10 @@ class QuizFragment : Fragment() {
             }
         })
 
-        countBar = object : CountDownTimer(10*1000, 1000){
+        countBar = object : CountDownTimer(30*1000, 1000){
             override fun onTick(millisUntilFinished: Long) {
                 textCount.text = (millisUntilFinished/1000).toInt().toString()
-                progressBar.setProgress((millisUntilFinished/100).toInt())
+                progressBar.setProgress((millisUntilFinished/300).toInt())
             }
             override fun onFinish() {
                 Log.i("timeend","fgvswfa")
