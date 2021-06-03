@@ -17,11 +17,9 @@ import com.epicood.letsfind.util.Constants.Companion.FUTBOOL
 import com.epicood.letsfind.util.Constants.Companion.IQ
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_base.*
-import kotlinx.android.synthetic.main.username_alert.*
 
 
 class BaseFragment : Fragment() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,16 +37,6 @@ class BaseFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-//        var mDatabase = FirebaseDatabase.getInstance().reference
-//        val androidID = getAndroidID(requireContext())
-//        if (mDatabase != null) {
-//            usernameAlert()
-//            btnAlert.setOnClickListener {
-//                mDatabase.child(androidID).setValue(Rating("Akmedof", "5000"))
-//            }
-//        } else {
-//            Log.i("data", "error");
-//        }
 
         generalKnowledge.setOnClickListener {
             val action = BaseFragmentDirections.actionBaseFragmentToQuizFragment()
@@ -68,16 +56,6 @@ class BaseFragment : Fragment() {
 
 
 
-
-//    fun firebase(){
-//        usernameAlert()
-//        btnAlert.setOnClickListener {
-//            val usernameFB = usernameText.text
-//            val androidID = getAndroidID(requireContext())
-//            val rating = Rating("usernameFB".toString(), "0")
-//            mDatabase?.child(androidID)?.setValue(rating)
-//        }
-//    }
 
 
 }

@@ -12,7 +12,6 @@ import androidx.navigation.Navigation
 import com.epicood.letsfind.model.Rating
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_username.*
-import kotlinx.android.synthetic.main.username_alert.*
 
 class UsernameFragment : Fragment() {
 
@@ -47,12 +46,5 @@ class UsernameFragment : Fragment() {
 
     }
 
-    fun usernameAlert(){
-        val view = View.inflate(requireContext(), R.layout.username_alert, null)
-        val builder = AlertDialog.Builder(requireContext())
-        builder.setView(view)
-        val dialog = builder.create()
-        dialog.show()
-        dialog.window?.setBackgroundDrawableResource(R.color.background)
-    }
+
 }

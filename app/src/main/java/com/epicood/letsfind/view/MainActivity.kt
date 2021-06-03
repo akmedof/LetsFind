@@ -25,13 +25,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-
 //        var database= FirebaseDatabase.getInstance().reference
 //
 //        database.setValue("23423rf2r")
-
-
-
 
 
         supportActionBar?.setBackgroundDrawable(ColorDrawable(getColor(R.color.toolBarBackground)))
@@ -62,22 +58,23 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-//        var mDatabase = FirebaseDatabase.getInstance().reference
-//        if (mDatabase != null) {
-//            val androidID = getAndroidID(applicationContext)
-//            val rating = Rating("usernameFB".toString(), "0")
-//            mDatabase.child(getAndroidID(applicationContext)).setValue(Rating("Aslan", "1000"))
-//            Log.i("data", "success");
-//        } else {
-//            Log.i("data", "error");
-//        }
+        /*    var mDatabase = FirebaseDatabase.getInstance().reference
+        if (mDatabase != null) {
+            val androidID = getAndroidID(applicationContext)
+            val rating = Rating("usernameFB".toString(), "0")
+            mDatabase.child(getAndroidID(applicationContext)).setValue(Rating("Aslan", "1grehgrb000"))
+            Log.i("data", "success");
+        } else {
+            Log.i("data", "error");
+        }
+
+    }*/
+
+         fun onSupportNavigateUp(): Boolean {
+            return navController.navigateUp() || super.onSupportNavigateUp()
+
+        }
+
 
     }
-
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp() || super.onSupportNavigateUp()
-
-    }
-
-
 }
