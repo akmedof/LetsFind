@@ -41,7 +41,7 @@ class QuizViewModel: ViewModel() {
         val qf11 = Quiz("F.C. Barselona kim tərəfindən quruldu?", "Hans Gamper", "Hans Suaz", "Marad Gamper", "Gamper Hans", "Hans Gamper")
         val qf12 = Quiz("Dünyadakı futbol federasiyalarını hansı qurum idarə edir?", "PES", "FIFA", "AFF", "UEFA", "FIFA")
         val qf13 = Quiz("Frank Lampard ən çox hansı komandada oynadı?", "Real Madrid", "Barselona", "Chelsea", "PSG", "Chelsea")
-        val qf14 = Quiz("İspaniya liqasının Birinci Divizionunda neçə komanda oynayır?", "22", "18", "20", "21", "16")
+        val qf14 = Quiz("İspaniya liqasının Birinci Divizionunda neçə komanda oynayır?", "22", "18", "20", "21", "20")
         val qf15 = Quiz("Xavi Hernández futbolçu hansı ölkədəndir?", "Türkiyə", "Braziliya", "Almaniya", "İspaniya", "İspaniya")
         val qf16 = Quiz("Bir oyunçunu yola salmaq üçün neçə sarı vərəqə lazımdır?", "1", "2", "3", "4", "2")
         val qf17 = Quiz("Ümumilikdə, bir oyunda neçə nəfər oynayır?", "10", "24", "12", "22", "22")
@@ -82,6 +82,37 @@ class QuizViewModel: ViewModel() {
 
         val list = arrayListOf(qIq1, qIq2, qIq3, qIq4, qIq5, qIq6, qIq7, qIq8, qIq9, qIq10, qIq11, qIq12, qIq13, qIq14, qIq15, qIq16, qIq17, qIq18, qIq19, qIq20)
 
+        val iqList = arrayListOf<Quiz>()
+        val l = getRandom(9)
+        l.forEach {
+            iqList.add(list[it])
+        }
+        quizs.value = iqList
+    }
+
+    fun getRiyaziyyat(){
+        val qf1 = Quiz("3) Ədədi 4-ə böləndə аşаğıdаkılаrdаn hаnsı qаlıq оlа bilər?", "4", "6", "3", "5", "3")
+        val qf2 = Quiz("18 mеtr məsаfədə 3 mеtr аrаlıqlа nеçə аğаc əkmək оlаr?", "7", "5", "6", "8", "7")
+        val qf3 = Quiz("Hansı futbol komandası ən çox Avropa kubokunu qazandı?", "Real Madrid", "Barselona", "Chelsi", "PSG", "Real Madrid")
+        val qf4 = Quiz("Ən yüksək səviyyəli Alman futbol liqasının adı nədir?", "Almaniya Liqası", "Super Liqa", "La Liqa", "Bundesliqa", "Bundesliqa")
+        val qf5 = Quiz("2014 futbol dünya çempionatının çempionu hansı komanda idi?", "Türkiyə", "Braziliya", "Almaniya", "İspaniya", "Almaniya")
+        val qf6 = Quiz("Ballon d'Or kimə verilir?", "İlin ən yaxşı dünya qapıcısına.", "İlin ən yaxşı dünya futbolçusuna.", "İlin ən yaxşı kulubuna.", "İlin ən yaxşı dünya hücumçusuna.", "İlin ən yaxşı dünya futbolçusuna.")
+        val qf7 = Quiz("Dünya Kuboku tarixinin bombardiri kimdir?", "Maradona", "Pele", "Miroslav Klose", "C.Ronaldo", "Miroslav Klose")
+        val qf8 = Quiz("Lionel Messi ilk Ballon d'Or-u nə vaxt qazandı?", "2008", "2006", "2011", "2009", "2009")
+        val qf9 = Quiz("Diego Armando Maradona hansı ləqəblə tanınırdı?", "El Pele", "El Pelusa", "El Maradona", "Maradona", "El Pelusa")
+        val qf10 = Quiz("Luís Suárez 1960-cı ildə qızıl top qazanan zaman hansı komanda üçün oynayırdı?", "Real Madrid", "İnter", "Barselona", "Mançester Yunayted", "Barselona")
+        val qf11 = Quiz("F.C. Barselona kim tərəfindən quruldu?", "Hans Gamper", "Hans Suaz", "Marad Gamper", "Gamper Hans", "Hans Gamper")
+        val qf12 = Quiz("Dünyadakı futbol federasiyalarını hansı qurum idarə edir?", "PES", "FIFA", "AFF", "UEFA", "FIFA")
+        val qf13 = Quiz("Frank Lampard ən çox hansı komandada oynadı?", "Real Madrid", "Barselona", "Chelsea", "PSG", "Chelsea")
+        val qf14 = Quiz("İspaniya liqasının Birinci Divizionunda neçə komanda oynayır?", "22", "18", "20", "21", "16")
+        val qf15 = Quiz("Xavi Hernández futbolçu hansı ölkədəndir?", "Türkiyə", "Braziliya", "Almaniya", "İspaniya", "İspaniya")
+        val qf16 = Quiz("Bir oyunçunu yola salmaq üçün neçə sarı vərəqə lazımdır?", "1", "2", "3", "4", "2")
+        val qf17 = Quiz("Ümumilikdə, bir oyunda neçə nəfər oynayır?", "10", "24", "12", "22", "22")
+        val qf18 = Quiz("Bundesliqada ən uğurlu komanda hansıdır?", "Barselona", "Chelsi", "Bayer", "PSG", "Bayer")
+        val qf19 = Quiz("Argentina neçə Dünya Kuboku qazandı?", "3", "2", "1", "5", "2")
+        val qf20 = Quiz("1986 Dünya Kuboku finalının nəticəsi nə oldu? \nArgentina - Almaniya", "2-1", "4-3", "3-2", "1-0", "3-2")
+
+        val list = arrayListOf(qf1, qf2, qf3, qf4, qf5, qf6, qf7, qf8, qf9, qf10, qf11, qf12, qf13, qf14, qf15, qf16, qf17, qf18, qf19, qf20)
         val iqList = arrayListOf<Quiz>()
         val l = getRandom(9)
         l.forEach {

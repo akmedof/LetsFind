@@ -26,9 +26,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
-//        var database=FirebaseDatabase.getInstance().reference
+//        var database= FirebaseDatabase.getInstance().reference
 //
-//        database.setValue("aaaaaaaaaaaa")
+//        database.setValue("23423rf2r")
 
 
 
@@ -60,15 +60,15 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-     var mDatabase = FirebaseDatabase.getInstance().reference
-        if (mDatabase != null) {
-            val androidID = getAndroidID(applicationContext)
-            val rating = Rating("usernameFB".toString(), "0")
-            mDatabase.child(getAndroidID(applicationContext)).setValue(Rating("Aslan", "100"))
-            Log.i("data", "success");
-        } else {
-            Log.i("data", "error");
-        }
+//        var mDatabase = FirebaseDatabase.getInstance().reference
+//        if (mDatabase != null) {
+//            val androidID = getAndroidID(applicationContext)
+//            val rating = Rating("usernameFB".toString(), "0")
+//            mDatabase.child(getAndroidID(applicationContext)).setValue(Rating("Aslan", "1000"))
+//            Log.i("data", "success");
+//        } else {
+//            Log.i("data", "error");
+//        }
 
     }
 

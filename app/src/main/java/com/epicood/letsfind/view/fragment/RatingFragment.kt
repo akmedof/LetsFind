@@ -26,11 +26,6 @@ class RatingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        var database = FirebaseDatabase.getInstance().reference
-
-
-
-
     }
 
 }
