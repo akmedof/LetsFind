@@ -10,13 +10,11 @@ import androidx.navigation.Navigation
 import com.epicood.letsfind.R
 import com.epicood.letsfind.model.Quiz
 import com.epicood.letsfind.model.QuizResult
-import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_result.*
 
 
 class ResultFragment : Fragment() {
 
-//    private lateinit var result: QuizResult
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +32,7 @@ class ResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var database = FirebaseDatabase.getInstance().reference
+
         arguments?.let {
             var incorrect = ResultFragmentArgs.fromBundle(it).incorrectCount
             var straight = ResultFragmentArgs.fromBundle(it).straightCount
@@ -43,8 +41,6 @@ class ResultFragment : Fragment() {
             getCountPoint(straight, incorrect)
             setCupImg(straight)
         }
-//        mainScore.text =
-//        score.text = result.incorrect.toString()
 
         resultToMain.setOnClickListener {
             Navigation.findNavController(it).navigate(ResultFragmentDirections.actionResultFragmentToBaseFragment())

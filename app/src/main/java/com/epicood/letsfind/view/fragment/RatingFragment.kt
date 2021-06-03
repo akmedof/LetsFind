@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.epicood.letsfind.R
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.FirebaseDatabase.getInstance
 
 class RatingFragment : Fragment() {
 

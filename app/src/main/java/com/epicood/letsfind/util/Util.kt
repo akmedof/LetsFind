@@ -1,5 +1,8 @@
 package com.epicood.letsfind
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.provider.Settings
 import android.util.Log
 //
 //fun main(){
@@ -9,7 +12,6 @@ import android.util.Log
 
 fun getRandom(count: Int): List<Int>{
     var c = count
-    val rand = (0..19).random()
     val list = arrayListOf<Int>()
     for (i in 0..c){
         val rand = (0..19).random()
@@ -25,4 +27,14 @@ fun getRandom(count: Int): List<Int>{
         }
     }
     return list
+}
+
+
+fun getAndroidID(context: Context): String{
+    @SuppressLint("HardwareIds")
+    val androidID = Settings.Secure.getString(
+        context?.getContentResolver(),
+        Settings.Secure.ANDROID_ID
+    )
+    return androidID
 }
