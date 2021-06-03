@@ -36,6 +36,12 @@
     <color name="btnClickSuccess">#4CAF50</color>
     <color name="btnClickError">#E70747</color>
 
+    //Result Fragment
+    <color name="resultText">#E9FFFFFF</color>
+    <color name="resultRowBG">#1D2551</color>
+    <color name="resultRowRatingCount">#2196F3</color>
+
+
 
 
 
