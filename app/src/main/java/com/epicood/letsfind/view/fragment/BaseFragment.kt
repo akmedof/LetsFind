@@ -22,6 +22,7 @@ import kotlinx.android.synthetic.main.username_alert.*
 
 class BaseFragment : Fragment() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -39,12 +40,11 @@ class BaseFragment : Fragment() {
 
 
 //        var mDatabase = FirebaseDatabase.getInstance().reference
+//        val androidID = getAndroidID(requireContext())
 //        if (mDatabase != null) {
 //            usernameAlert()
 //            btnAlert.setOnClickListener {
-//                val androidID = getAndroidID(it.context)
-//                val rating = Rating("usernameFB".toString(), "0")
-//                mDatabase.child(getAndroidID(it.context)).setValue(Rating("Aslanm", "1000"))
+//                mDatabase.child(androidID).setValue(Rating("Akmedof", "5000"))
 //            }
 //        } else {
 //            Log.i("data", "error");
@@ -66,14 +66,6 @@ class BaseFragment : Fragment() {
         }
     }
 
-    fun usernameAlert(){
-        val view = View.inflate(requireContext(), R.layout.username_alert, null)
-        val builder = AlertDialog.Builder(requireContext())
-        builder.setView(view)
-        val dialog = builder.create()
-        dialog.show()
-        dialog.window?.setBackgroundDrawableResource(R.color.background)
-    }
 
 
 

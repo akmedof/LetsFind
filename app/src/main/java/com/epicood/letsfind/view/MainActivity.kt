@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.baseFragment,
                 R.id.resultFragment,
+                R.id.usernameFragment,
 //            R.id.ratingFragment,
 //            R.id.profilFragment,
             )
@@ -55,6 +56,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.ratingFragment -> bottomBar.visibility = View.GONE
                 R.id.profilFragment -> bottomBar.visibility = View.GONE
                 R.id.resultFragment -> bottomBar.visibility = View.GONE
+                R.id.usernameFragment -> bottomBar.visibility = View.GONE
                 else -> bottomBar.visibility = View.VISIBLE
             }
         }
