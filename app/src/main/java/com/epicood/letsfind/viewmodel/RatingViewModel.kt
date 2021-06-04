@@ -1,29 +1,37 @@
 package com.epicood.letsfind.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.epicood.letsfind.model.Rating
-import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.*
 
 class RatingViewModel: ViewModel() {
 
-    private lateinit var database: DatabaseReference
     val ratings = MutableLiveData<List<Rating>>()
 
     fun getData(){
-
-
-
-        val r1 = Rating("Aslan", "45250")
-        val r2 = Rating("Ferzin", "500000")
-        val r3 = Rating("Resul", "78500")
-        val r4 = Rating("Asif", "879296")
-        val r5 = Rating("Malik", "1622")
-
-        val list = arrayListOf<Rating>(r1, r2, r3, r4, r5)
-        ratings.value = list
-
+        var mDatabase = FirebaseDatabase.getInstance().reference
+        var getData = object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val list = arrayListOf<Rating>()
+                for (i in snapshot.children) {
+                    var usename = i.child("username").getValue()
+                    var point = i.child("point").getValue()
+                    var androidID = i.key.toString()
+                    Log.i("andID", androidID)
+                    list.add(Rating(androidID, usename.toString(), point.toString()))
+                }
+                ratings.value = list
+            }
+            override fun onCancelled(error: DatabaseError) {
+            }
+        }
+        mDatabase.addValueEventListener(getData)
     }
+
+
+
 
 
 }
