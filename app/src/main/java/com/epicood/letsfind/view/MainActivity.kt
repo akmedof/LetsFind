@@ -25,15 +25,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
         supportActionBar?.setBackgroundDrawable(ColorDrawable(getColor(R.color.toolBarBackground)))
 
         navController = findNavController(R.id.fragment)
         val appBarConfiguration: AppBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.baseFragment,
-                R.id.resultFragment,
-                R.id.usernameFragment,
+//                R.id.resultFragment,
+//                R.id.usernameFragment,
             )
         )
 
@@ -50,25 +49,9 @@ class MainActivity : AppCompatActivity() {
                 else -> bottomBar.visibility = View.VISIBLE
             }
         }
+    }
 
-
-        /*    var mDatabase = FirebaseDatabase.getInstance().reference
-        if (mDatabase != null) {
-            val androidID = getAndroidID(applicationContext)
-            val rating = Rating("usernameFB".toString(), "0")
-            mDatabase.child(getAndroidID(applicationContext)).setValue(Rating("Aslan", "1grehgrb000"))
-            Log.i("data", "success");
-        } else {
-            Log.i("data", "error");
-        }
-
-    }*/
-
-         fun onSupportNavigateUp(): Boolean {
-            return navController.navigateUp() || super.onSupportNavigateUp()
-
-        }
-
-
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }

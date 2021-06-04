@@ -8,19 +8,20 @@ import com.google.firebase.database.*
 
 class RatingViewModel: ViewModel() {
 
+    private lateinit var mDatabase : DatabaseReference
     val ratings = MutableLiveData<List<Rating>>()
 
     fun getData(){
-        var mDatabase = FirebaseDatabase.getInstance().reference
+        mDatabase = FirebaseDatabase.getInstance().reference
         var getData = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val list = arrayListOf<Rating>()
                 for (i in snapshot.children) {
                     var usename = i.child("username").getValue()
                     var point = i.child("point").getValue()
-                    var androidID = i.key.toString()
-                    Log.i("andID", androidID)
-                    list.add(Rating(androidID, usename.toString(), point.toString()))
+                    var androidID = i.child("androidID").getValue()
+//                    Log.i("andID", androidID)
+                    list.add(Rating(androidID.toString(), usename.toString(), point.toString()))
                 }
                 ratings.value = list
             }
@@ -30,7 +31,23 @@ class RatingViewModel: ViewModel() {
         mDatabase.addValueEventListener(getData)
     }
 
-
+    fun androidIDCheck(androidID: String): Boolean{
+        var check = false
+        mDatabase = FirebaseDatabase.getInstance().reference
+        var getData = object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val list = arrayListOf<Rating>()
+                for (i in snapshot.children) {
+                    check = i.key.toString() == androidID
+                }
+                ratings.value = list
+            }
+            override fun onCancelled(error: DatabaseError) {
+            }
+        }
+//        mDatabase.addValueEventListener(getData)
+        return true
+    }
 
 
 

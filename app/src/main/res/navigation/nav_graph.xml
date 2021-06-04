@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/usernameFragment">
+    app:startDestination="@id/baseFragment">
 
     <fragment
         android:id="@+id/baseFragment"
@@ -13,7 +13,10 @@
         <action
             android:id="@+id/action_baseFragment_to_quizFragment"
             app:destination="@id/quizFragment" />
-<!--        <argument-->
+        <action
+            android:id="@+id/action_baseFragment_to_usernameFragment"
+            app:destination="@id/usernameFragment" />
+        <!--        <argument-->
 <!--            android:name="ratingID"-->
 <!--            app:argType="com.epicood.letsfind.model.Quiz" />-->
     </fragment>
