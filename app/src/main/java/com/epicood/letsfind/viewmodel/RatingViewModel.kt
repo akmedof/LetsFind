@@ -3,12 +3,16 @@ package com.epicood.letsfind.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.epicood.letsfind.model.Rating
+import com.google.firebase.database.DatabaseReference
 
 class RatingViewModel: ViewModel() {
 
+    private lateinit var database: DatabaseReference
     val ratings = MutableLiveData<List<Rating>>()
 
     fun getData(){
+
+
 
         val r1 = Rating("Aslan", "45250")
         val r2 = Rating("Ferzin", "500000")
@@ -20,5 +24,6 @@ class RatingViewModel: ViewModel() {
         ratings.value = list
 
     }
+
 
 }

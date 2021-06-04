@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -24,12 +25,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-//        var database= FirebaseDatabase.getInstance().reference
-//
-//        database.setValue("23423rf2r")
-
-
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
         supportActionBar?.setBackgroundDrawable(ColorDrawable(getColor(R.color.toolBarBackground)))
 
         navController = findNavController(R.id.fragment)
@@ -38,8 +34,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.baseFragment,
                 R.id.resultFragment,
                 R.id.usernameFragment,
-//            R.id.ratingFragment,
-//            R.id.profilFragment,
             )
         )
 
