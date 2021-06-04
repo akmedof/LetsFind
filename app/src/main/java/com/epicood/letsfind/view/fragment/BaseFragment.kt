@@ -43,8 +43,9 @@ class BaseFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         viewModel = ViewModelProvider(this).get(RatingViewModel::class.java)
-        viewModel.getData()
+        viewModel.getAllAndroidID()
         androidIDCheck(view)
         generalKnowledge.setOnClickListener {
             val action = BaseFragmentDirections.actionBaseFragmentToQuizFragment()
@@ -63,31 +64,34 @@ class BaseFragment : Fragment() {
     }
 
     private  fun androidIDCheck(view: View){
-        viewModel.ratings.observe(viewLifecycleOwner, Observer { ratings ->
-            ratings?.let {
-                if (it.isEmpty()) {
-                    Navigation.findNavController(view)
-                        .navigate(BaseFragmentDirections.actionBaseFragmentToUsernameFragment())
-                }else{
+        var id = getAndroidID(requireContext())
+        viewModel.androidIDList.observe(viewLifecycleOwner, Observer { andID ->
+            andID?.let {
+                if (it.isNotEmpty()){
                     var i = 0
-                    for (rating in it) {
-                        if (rating.androidID.equals(getAndroidID(requireContext()))) {
-                            Log.i("eeeee", it.toString() + "asd")
+                    andID.forEach {
+                        if (it.equals(id)){
+//                        Log.i("ssss", "success " + it + " - " +  id)
                             i++
-                        } else {
-                            Log.i("eeeee", "error")
-                        }
-                        if (i == 0) {
-                            Navigation.findNavController(view)
-                                .navigate(BaseFragmentDirections.actionBaseFragmentToUsernameFragment())
+                        }else{
+//                        Log.i("ssss", "error")
+//                        Log.i("ssss", "error " + it + " - " +  id)
                         }
                     }
+                    if (i == 0){
+                        Navigation.findNavController(view).navigate(
+                            BaseFragmentDirections.actionBaseFragmentToUsernameFragment())
+                    }
+                }else{
+                    Navigation.findNavController(view).navigate(
+                        BaseFragmentDirections.actionBaseFragmentToUsernameFragment())
                 }
-
             }
 
         })
     }
+
+
 
 
 

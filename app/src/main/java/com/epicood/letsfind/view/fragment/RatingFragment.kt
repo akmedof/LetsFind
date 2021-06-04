@@ -48,4 +48,8 @@ class RatingFragment : Fragment() {
 
     }
 
+    override fun onStop() {
+        super.onStop()
+    }
+
 }

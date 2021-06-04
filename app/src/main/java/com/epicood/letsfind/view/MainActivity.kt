@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.baseFragment,
 //                R.id.resultFragment,
-//                R.id.usernameFragment,
+                R.id.usernameFragment,
             )
         )
 
