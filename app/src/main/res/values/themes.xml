@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.LetsFind" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">#E12196F3</item>
         <item name="colorPrimaryVariant">#E12196F3</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -29,6 +29,6 @@
         <item name="boxStrokeWidth">1dp</item>
         <item name="android:textColor">@color/btnBackground</item>
         <item name="colorAccent">@color/btnBackground</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">15sp</item>
     </style>
 </resources>
