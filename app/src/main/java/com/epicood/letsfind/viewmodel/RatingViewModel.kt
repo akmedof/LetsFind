@@ -1,11 +1,15 @@
 package com.epicood.letsfind.viewmodel
 
 import android.app.Application
+import android.content.Context
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.epicood.letsfind.getAndroidID
 import com.epicood.letsfind.model.Rating
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.fragment_result.*
 import kotlinx.coroutines.launch
 
 class RatingViewModel(application: Application) : BaseViewModel(application) {
@@ -13,26 +17,7 @@ class RatingViewModel(application: Application) : BaseViewModel(application) {
     private lateinit var mDatabase : DatabaseReference
     val ratings = MutableLiveData<List<Rating>>()
     val androidIDList = MutableLiveData<List<String>>()
-//    private val dao = QuizDatabase(getApplication()).quizDAO
 
-//    fun insertRating(rating: Rating){
-//        launch {
-//            dao.insertRating(rating)
-//        }
-//    }
-//
-//    fun getData(){
-//        launch {
-//            val list: List<Rating> = dao.getAllRating()
-//            ratings.value = list
-//        }
-//    }
-//
-//    fun deleteAll(){
-//        launch {
-//            dao.deleteAllRating()
-//        }
-//    }
 
     fun getData(){
         mDatabase = FirebaseDatabase.getInstance().reference
@@ -89,6 +74,19 @@ class RatingViewModel(application: Application) : BaseViewModel(application) {
         }
 //        mDatabase.addValueEventListener(getData)
         return true
+    }
+
+    fun updatePointByAndroidID(androidID: String, point: String, context: Context){
+        mDatabase = FirebaseDatabase.getInstance().reference
+        val quizP = mapOf<String, String>(
+            "point" to point
+        )
+
+        mDatabase.child(androidID).updateChildren(quizP).addOnSuccessListener {
+            Toast.makeText(context, "Successful Update", Toast.LENGTH_SHORT).show()
+        }.addOnFailureListener {
+            Toast.makeText(context, "Failed to Update", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onCleared() {

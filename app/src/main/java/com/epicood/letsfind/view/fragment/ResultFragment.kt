@@ -6,15 +6,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.epicood.letsfind.R
+import com.epicood.letsfind.getAndroidID
 import com.epicood.letsfind.model.Quiz
 import com.epicood.letsfind.model.QuizResult
+import com.epicood.letsfind.viewmodel.RatingViewModel
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_result.*
 
 
 class ResultFragment : Fragment() {
 
+//    private lateinit var mDatabase : DatabaseReference
+//    private lateinit var binding:
+    private lateinit var viewModel: RatingViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +42,9 @@ class ResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel = ViewModelProvider(this).get(RatingViewModel::class.java)
+        viewModel.getData()
+
 
         arguments?.let {
             var incorrect = ResultFragmentArgs.fromBundle(it).incorrectCount
@@ -43,6 +56,7 @@ class ResultFragment : Fragment() {
         }
 
         resultToMain.setOnClickListener {
+            updatePoint()
             Navigation.findNavController(it).navigate(ResultFragmentDirections.actionResultFragmentToBaseFragment())
         }
     }
@@ -64,5 +78,21 @@ class ResultFragment : Fragment() {
             cupImage.setImageResource(R.drawable.sliver_cup)
         }else cupImage.setImageResource(R.drawable.bronz_cup)
     }
+    private fun updatePoint(){
+        viewModel.ratings.observe(viewLifecycleOwner, Observer { ratings->
+            ratings?.let {
+                it.forEach {
+                    if (it.androidID == getAndroidID(requireContext())){
+                        var point = it.point?.toInt()?.plus(quizPoint.text.toString().toInt())
+                        viewModel.updatePointByAndroidID(getAndroidID(requireContext()),
+                            point.toString(), requireContext())
+                    }
+                }
+            }
+        })
+    }
+
+
+
 
 }
