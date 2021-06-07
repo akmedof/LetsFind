@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.epicood.letsfind.R
 import com.epicood.letsfind.adapter.RatingAdapter
+import com.epicood.letsfind.model.Rating
 import com.epicood.letsfind.viewmodel.RatingViewModel
 import kotlinx.android.synthetic.main.fragment_rating.*
 
@@ -41,8 +42,11 @@ class RatingFragment : Fragment() {
         recyclerViewRating.adapter = adapter
 
         viewModel.ratings.observe(viewLifecycleOwner, Observer { ratings ->
-            ratings?.let {
-                adapter.updateFavoriteList(it)
+            ratings?.let { list ->
+                val sortedList = list.sortedBy { it.point?.toInt() }
+                val rat = sortedList.reversed()
+                setLeaderTop(rat)
+                adapter.updateFavoriteList(sortedList.reversed())
             }
         })
 
@@ -50,6 +54,15 @@ class RatingFragment : Fragment() {
 
     override fun onStop() {
         super.onStop()
+    }
+
+    private fun setLeaderTop(ratings: List<Rating>){
+        ratingUsername1.text = ratings[0].username
+        ratingPoint1.text = ratings[0].point
+        ratingUsername2.text = ratings[1].username
+        ratingPoint2.text = ratings[1].point
+        ratingUsername3.text = ratings[2].username
+        ratingPoint3.text = ratings[2].point
     }
 
 }

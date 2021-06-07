@@ -6,23 +6,16 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingAdapter
 import androidx.navigation.findNavController
 
-class QuizBinding {
+//class QuizBinding {
 
 //    companion object{
 //
 //        @BindingAdapter("onGeneralKnowledgeClick")
 //        @JvmStatic
 //        fun onGeneralKnowledgeClick(generalKnowledge: CardView){
-//            generalKnowledge.setOnClickListener {
-//                try {
-//                    val action = BaseFragmentDirections.actionBaseFragmentToQuizFragment()
-//                    generalKnowledge.findNavController().navigate(action)
-//                }catch (e: Exception){
-//                    Log.d("onGeneralKnowledgeClick", e.toString())
-//                }
-//            }
+//
 //        }
 //
 //    }
 
-}
+//}
